@@ -23,7 +23,7 @@ secteurs = st.sidebar.multiselect("Secteurs", ["Centre-ville", "Résidentiel", "
 uploaded_file = st.sidebar.file_uploader("Charger un fichier CSV", type="csv")
 
 if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, encoding='utf-8-sig')
 else:
     try:
         df = pd.read_csv("sample_data.csv")
